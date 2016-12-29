@@ -6,29 +6,28 @@ const WelcomeBar = (props) => {
   const { textStyle, containerStyle } = styles
 
   return (
-  <View style={containerStyle}>
-    <View>
-      <Text>
-        Welcome, James!
+    <View style={containerStyle}>
+      <Text style={textStyle}>
+        Welcome, {props.name}!
       </Text>
-    </View>
-    <View>
       <Button onPress={() => console.log('Button Pressed!')}>
         Log Out
       </Button>
     </View>
-  </View>
   )
 }
 
 const styles = {
   textStyle: {
     fontSize: 20,
+    flex: 3,
+    textAlign: 'center'
   },
   containerStyle: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    alignItems: 'center'
+    alignItems: 'center',
+    paddingTop: 10
   }
 }
 

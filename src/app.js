@@ -5,11 +5,13 @@ import WelcomeBar from './components/WelcomeBar'
 import { Header } from './components/common'
 
 class App extends Component {
+  state = { name: 'James' }
+
   render() {
     return (
       <View>
         <Header headerText={'DestinationFit'} />
-        <WelcomeBar />
+        <WelcomeBar name={this.state.name} />
       </View>
     )
   }
