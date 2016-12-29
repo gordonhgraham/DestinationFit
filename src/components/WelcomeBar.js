@@ -19,7 +19,7 @@ const WelcomeBar = (props) => {
 
 const styles = {
   textStyle: {
-    fontSize: 20,
+    fontSize: 25,
     flex: 3,
     textAlign: 'center'
   },
