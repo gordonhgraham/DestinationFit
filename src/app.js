@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { View } from 'react-native'
 import WelcomeBar from './components/WelcomeBar'
 import Avatar from './components/Avatar'
+import LocationsList from './components/LocationsList'
 import { Header } from './components/common'
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
         <Header headerText={'DestinationFit'} />
         <WelcomeBar name={this.state.name} />
         <Avatar avatar_uri={this.state.avatar_uri} steps={this.state.steps} />
+        <LocationsList />
       </View>
     )
   }
