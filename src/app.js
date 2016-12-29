@@ -1,6 +1,7 @@
 // import library to help create Component
 import React, { Component } from 'react'
 import { View } from 'react-native'
+import LandingPage from './components/LandingPage'
 import WelcomeBar from './components/WelcomeBar'
 import Avatar from './components/Avatar'
 import LocationsList from './components/LocationsList'
@@ -16,10 +17,11 @@ class App extends Component {
   render() {
     return (
       <View>
-        <Header headerText={'DestinationFit'} />
+        {/* <Header headerText={'DestinationFit'} />
         <WelcomeBar name={this.state.name} />
         <Avatar avatar_uri={this.state.avatar_uri} steps={this.state.steps} />
-        <LocationsList />
+        <LocationsList /> */}
+        <LandingPage />
       </View>
     )
   }
