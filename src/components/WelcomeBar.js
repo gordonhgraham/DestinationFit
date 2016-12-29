@@ -1,7 +1,6 @@
 import React from 'react'
 import { Text, View } from 'react-native'
-// import Section from './Section'
-import Button from './Button'
+import { Button } from './common'
 
 const WelcomeBar = (props) => {
   const { textStyle, containerStyle } = styles

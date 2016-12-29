@@ -1,15 +1,4 @@
-// import library to help create Component
-import React from 'react'
-import { AppRegistry, View } from 'react-native'
-import Header from './src/components/Header'
-import WelcomeBar from './src/components/WelcomeBar'
+import { AppRegistry } from 'react-native'
+import App from './src/app'
 
-const DestinationFit = () => (
-  //add style={{ flex: 1 }} to root view below
-  <View>
-    <Header headerText={'DestinationFit'}/>
-    <WelcomeBar />
-  </View>
-)
-
-AppRegistry.registerComponent('DestinationFit', () => DestinationFit)
+AppRegistry.registerComponent('DestinationFit', () => App)
