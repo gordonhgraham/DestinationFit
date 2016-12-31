@@ -1,0 +1,6 @@
+framework module Pods_DestinationFit {
+  umbrella header "Pods-DestinationFit-umbrella.h"
+
+  export *
+  module * { export * }
+}

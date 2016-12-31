@@ -1,10 +1,11 @@
 // import library to help create Component
 import React, { Component } from 'react'
-import { View } from 'react-native'
+import { View, Text } from 'react-native'
 import LandingPage from './components/LandingPage'
 import WelcomeBar from './components/WelcomeBar'
 import Avatar from './components/Avatar'
 import LocationsList from './components/LocationsList'
+import Map from './components/Map'
 import { Header } from './components/common'
 
 class App extends Component {
@@ -21,7 +22,9 @@ class App extends Component {
         <WelcomeBar name={this.state.name} />
         <Avatar avatar_uri={this.state.avatar_uri} steps={this.state.steps} />
         <LocationsList /> */}
-        <LandingPage />
+        {/* <LandingPage /> */}
+        <Map />
+        <Text style={{ fontSize: 30 }}>HOWDY FRIENDS</Text>
       </View>
     )
   }
