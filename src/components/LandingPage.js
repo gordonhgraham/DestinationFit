@@ -7,7 +7,6 @@ const LandingPage = () => {
     headerStyle,
     imageStyle,
     textStyle,
-    buttonStyle,
     containerStyle,
     buttonContainerStyle
   } = styles
@@ -20,13 +19,17 @@ const LandingPage = () => {
         source={{ uri: 'https://irp-cdn.multiscreensite.com/43ef94bc/dms3rep/multi/desktop/visit-us-icon-200x200.png' }}
       />
       <Text style={textStyle}>
-        GetToFit helps you reach your step goal by providing you with points
-        of interest near you and their step distance away.
+        DestinationFit helps you reach your step goal by providing you with
+        destinations near you and their step distance away.
         Just find a spot and go on a walk!
       </Text>
       <View style={buttonContainerStyle}>
         <Button>Log In With FitBit</Button>
       </View>
+      <Text style={textStyle}>Or</Text>
+      <Text onPress={() => console.log('pressed')} style={textStyle}>
+        Continue to estimate stride length
+      </Text>
     </View>
   )
 }
@@ -39,21 +42,26 @@ const styles = {
   imageStyle: {
     alignSelf: 'center',
     height: 130,
-    width: 130
+    width: 130,
+    marginTop: 35,
+    marginBottom: 30
   },
   textStyle: {
     alignSelf: 'center',
     justifyContent: 'center'
   },
   containerStyle: {
-    paddingTop: 15
+    paddingTop: 15,
+    paddingRight: 10,
+    paddingLeft: 10
   },
   buttonContainerStyle: {
     paddingTop: 15,
-    height: 60,
+    height: 50,
     width: 120,
-    alignSelf: 'center'
-  }
+    alignSelf: 'center',
+    alignItems: 'center'
+  },
 }
 
 export default LandingPage
