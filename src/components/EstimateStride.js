@@ -6,7 +6,7 @@ class EstimateStride extends Component {
   state = { steps: undefined, distance: undefined }
   render() {
     return (
-      <View>
+      <View style={{ marginTop: 80 }}>
         <Text>To estimate stide length you will need a tape measure
           or a known distance. Count your steps as you walk the across the
           distance, making sure you take at least 20 steps. Enter
