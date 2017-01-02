@@ -6,7 +6,7 @@ const LocationsList = () => {
   const { containerStyle, headerStyle } = styles
   return (
     <View style={containerStyle}>
-      <Text style={headerStyle}>Locations to help you reach your goal.</Text>
+      <Text style={headerStyle}>Destinations to help you reach your goal.</Text>
       <Card>
         <CardSection>
           <Text>Sarah's Sweet Shoppe</Text>

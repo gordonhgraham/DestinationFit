@@ -40,6 +40,7 @@ const styles = {
   },
   containerStyle: {
     marginTop: 20,
+    marginBottom: 20,
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
