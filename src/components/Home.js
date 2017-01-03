@@ -23,14 +23,7 @@ export default class Home extends Component {
           steps={this.state.steps}
           stride={this.props.stride}
         />
-        <Card>
-          <CardSection>
-            <PlacePicker />
-          </CardSection>
-          <CardSection>
-            <Map />
-          </CardSection>
-        </Card>
+        <PlacePicker />
       </View>
     )
   }
