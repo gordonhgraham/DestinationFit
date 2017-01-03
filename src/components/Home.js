@@ -2,10 +2,11 @@ import React, { Component } from 'react'
 import { View } from 'react-native'
 import WelcomeBar from './WelcomeBar'
 import Avatar from './Avatar'
-import DestinationsList from './DestinationsList'
+import Map from './Map'
 import PlacePicker from './PlacePicker'
+import { Card, CardSection } from './common'
 
-class Home extends Component {
+export default class Home extends Component {
   state = {
     name: 'James',
     avatar_uri: 'https://i.stack.imgur.com/WmvM0.png',
@@ -22,11 +23,15 @@ class Home extends Component {
           steps={this.state.steps}
           stride={this.props.stride}
         />
-        <PlacePicker />
-        {/* <DestinationsList /> */}
+        <Card>
+          <CardSection>
+            <PlacePicker />
+          </CardSection>
+          <CardSection>
+            <Map />
+          </CardSection>
+        </Card>
       </View>
     )
   }
 }
-
-export default Home

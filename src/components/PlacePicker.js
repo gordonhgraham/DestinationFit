@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
+import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
 import axios from 'axios'
-
-// import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
-const { GooglePlacesAutocomplete } = require('react-native-google-places-autocomplete')
 
 class PlacePicker extends Component {
   render() {
@@ -26,11 +24,9 @@ class PlacePicker extends Component {
         onPress={(details) => {
           const placeId = details.place_id
           getLatLng(placeId)
-            // .then(() => console.log('it worked!', this.state.destinationLat, this.state.destinationLng))
           }
         }
         query={{
-          // types: 'establishment',
           key: 'AIzaSyCO5hdyDQWgv8H3LyqVsA1Od14hstUWJ-c',
           language: 'en'
         }}
