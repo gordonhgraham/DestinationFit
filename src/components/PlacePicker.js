@@ -1,16 +1,15 @@
 import React, { Component } from 'react'
-import { View } from 'react-native'
-import Map from './Map'
+import { View, Text } from 'react-native'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
 import axios from 'axios'
+import Map from './Map'
+// import Distance from './Distance'
 
 class PlacePicker extends Component {
   constructor(props) {
     super(props)
     this.state = {
       destinationPosition: undefined,
-      userInitialPosition: props.userInitialPosition,
-      userLastPosition: props.userLastPosition,
     }
   }
 
@@ -18,14 +17,16 @@ class PlacePicker extends Component {
     const getLatLng = (placeId) => {
       axios.get(`https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&key=AIzaSyCO5hdyDQWgv8H3LyqVsA1Od14hstUWJ-c`)
         .then(data => {
-          this.setState({ destinationPosition: data.data.result.geometry.location })
-          console.log('should be object with lat and lng', this.state.destinationPosition)
+          const destinationPosition = data.data.result.geometry.location
+          getDistance(destinationPosition)
         })
     }
 
-    const getDistance = (userPosition, destinationPosition) => {
-
+    const getDistance = (destinationPosition) => {
+      axios.get(`https://maps.googleapis.com/maps/api/directions/json?origin=${this.props.userPosition.latitude},${this.props.userPosition.longitude}&destination=${destinationPosition.lat},${destinationPosition.lng}&key=AIzaSyD8Y2CrGc4ZHnd6NdKlSEOruZQDw9e888c`)
+        .then(data => console.log('response form getDistance', data))
     }
+
 
     const renderMap = () => {
       if (this.state.destinationPosition !== undefined) {

@@ -2,9 +2,7 @@ import React, { Component } from 'react'
 import { View } from 'react-native'
 import WelcomeBar from './WelcomeBar'
 import Avatar from './Avatar'
-import Map from './Map'
 import PlacePicker from './PlacePicker'
-import { Card, CardSection } from './common'
 
 export default class Home extends Component {
   state = {
@@ -21,7 +19,6 @@ export default class Home extends Component {
     navigator.geolocation.getCurrentPosition(position => {
         const userInitialPosition = position.coords
         this.setState({ userInitialPosition })
-        console.log('this.state.userInitialPosition', this.state.userInitialPosition)
       },
       error => console.error(error),
       { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
@@ -29,7 +26,6 @@ export default class Home extends Component {
     this.watchID = navigator.geolocation.watchPosition(position => {
       const userLastPosition = position.coords
       this.setState({ userLastPosition })
-      console.log('this.state.userLastPosition', this.state.userLastPosition)
     })
   }
 
@@ -39,6 +35,7 @@ export default class Home extends Component {
 
 
   render() {
+    console.log('state in home', this.state)
     return (
       <View style={{ marginTop: 80 }}>
         <WelcomeBar name={this.state.name} />
@@ -48,8 +45,7 @@ export default class Home extends Component {
           stride={this.props.stride}
         />
         <PlacePicker
-          userInitialPosition={this.state.userInitialPosition}
-          userLastPosition={this.state.userLastPosition}
+          userPosition={this.state.userLastPosition}
         />
       </View>
     )
