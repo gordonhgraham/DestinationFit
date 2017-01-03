@@ -3,6 +3,7 @@ import { View } from 'react-native'
 import WelcomeBar from './WelcomeBar'
 import Avatar from './Avatar'
 import DestinationsList from './DestinationsList'
+import PlacePicker from './PlacePicker'
 
 class Home extends Component {
   state = {
@@ -21,7 +22,8 @@ class Home extends Component {
           steps={this.state.steps}
           stride={this.props.stride}
         />
-        <DestinationsList />
+        <PlacePicker />
+        {/* <DestinationsList /> */}
       </View>
     )
   }
