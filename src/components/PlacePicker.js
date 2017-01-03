@@ -5,29 +5,34 @@ import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplet
 import axios from 'axios'
 
 class PlacePicker extends Component {
-  constructor() {
-    super()
-    this.state = { destinationLat: undefined, destinationLng: undefined }
+  constructor(props) {
+    super(props)
+    this.state = {
+      destinationPosition: undefined,
+      userInitialPosition: props.userInitialPosition,
+      userLastPosition: props.userLastPosition,
+    }
   }
 
   render() {
     const getLatLng = (placeId) => {
       axios.get(`https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&key=AIzaSyCO5hdyDQWgv8H3LyqVsA1Od14hstUWJ-c`)
         .then(data => {
-          this.setState({
-            destinationLat: data.data.result.geometry.location.lat,
-            destinationLng: data.data.result.geometry.location.lng,
-          })
-          console.log(this.state.destinationLat, this.state.destinationLng)
+          this.setState({ destinationPosition: data.data.result.geometry.location })
+          console.log('should be object with lat and lng', this.state.destinationPosition)
         })
     }
 
+    const getDistance = (userPosition, destinationPosition) => {
+
+    }
+
     const renderMap = () => {
-      if (this.state.destinationLat !== undefined) {
+      if (this.state.destinationPosition !== undefined) {
         return (
           <Map
-            initialLat={this.state.destinationLat}
-            initialLon={this.state.destinationLng}
+            destinationLat={this.state.destinationPosition.lat}
+            destinationLon={this.state.destinationPosition.lng}
           />
         )
       }
