@@ -12,11 +12,6 @@ import EstimateStride from './components/EstimateStride'
 import Home from './components/Home'
 
 class App extends Component {
-  state = {
-    name: 'James',
-    avatar_uri: 'https://i.stack.imgur.com/WmvM0.png',
-    steps: 8675
-  }
 
   // logic for if user is logged in render home, if stride length is not null, show home.
 

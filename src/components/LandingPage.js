@@ -32,7 +32,7 @@ const LandingPage = () => {
         <Button>Log In With FitBit</Button>
       </View>
       <Text style={textStyle}>Or</Text>
-      <Text onPress={Actions.Home} style={textStyle}>
+      <Text onPress={Actions.EstimateStride} style={textStyle}>
         Continue to estimate stride length
       </Text>
     </View>

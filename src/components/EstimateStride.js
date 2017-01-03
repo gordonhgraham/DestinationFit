@@ -1,10 +1,17 @@
 import React, { Component } from 'react'
 import { View, Text } from 'react-native'
+import { Actions } from 'react-native-router-flux'
 import { Button, Card, CardSection, InputField } from './common'
 
 class EstimateStride extends Component {
   state = { steps: undefined, distance: undefined }
   render() {
+    const calculateStride = () => {
+      const stride = this.state.distance / this.state.steps
+      console.log(stride)
+      Actions.Home({ stride })
+    }
+
     return (
       <View style={{ marginTop: 80 }}>
         <Text>To estimate stide length you will need a tape measure
@@ -31,7 +38,9 @@ class EstimateStride extends Component {
               />
             </CardSection>
             <CardSection>
-              <Button>Calculate Stride Length</Button>
+              <Button onPress={calculateStride}>
+                  Calculate Stride Length
+                </Button>
             </CardSection>
           </Card>
       </View>

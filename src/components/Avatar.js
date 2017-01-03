@@ -1,5 +1,6 @@
 import React from 'react'
 import { View, Image, Text } from 'react-native'
+import { Actions } from 'react-native-router-flux'
 import { Button } from './common'
 
 const Avatar = (props) => {
@@ -10,6 +11,28 @@ const Avatar = (props) => {
     buttonContainerStyle
   } = styles
 
+  const renderStepsOrStride = () => {
+    if (!isNaN(props.stride)) {
+      return (
+        <View>
+          <Text style={textStyle}>Your stride length is {props.stride * 12} inches.</Text>
+          <View style={buttonContainerStyle}>
+            <Button onPress={Actions.EstimateStride}>Recalculate Stride</Button>
+          </View>
+        </View>
+      )
+    }
+
+    return (
+      <View>
+        <Text style={textStyle}>Only {props.steps} steps to surpass your goal!</Text>
+        <View style={buttonContainerStyle}>
+          <Button>Resync With Fitbit</Button>
+        </View>
+      </View>
+    )
+  }
+
   return (
     <View style={containerStyle}>
       <Image
@@ -17,10 +40,10 @@ const Avatar = (props) => {
         source={{ uri: props.avatar_uri }}
       />
       <View>
-        <Text style={textStyle}>Only {props.steps} steps to surpass your goal!</Text>
-        <View style={buttonContainerStyle}>
+        <View>{renderStepsOrStride()}</View>
+        {/* <View style={buttonContainerStyle}>
           <Button>Resync With Fitbit</Button>
-        </View>
+        </View> */}
       </View>
     </View>
   )
