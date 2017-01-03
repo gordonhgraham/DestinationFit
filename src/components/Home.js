@@ -48,6 +48,7 @@ export default class Home extends Component {
         />
         <PlacePicker
           userPosition={this.state.userLastPosition}
+          stride={this.props.stride}
         />
       </View>
     )

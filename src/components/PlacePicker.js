@@ -3,14 +3,14 @@ import { View, Text } from 'react-native'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
 import axios from 'axios'
 import Map from './Map'
-// import Distance from './Distance'
 
 class PlacePicker extends Component {
   constructor(props) {
     super(props)
     this.state = {
       destinationPosition: undefined,
-      distance: undefined
+      distance: undefined,
+      time: undefined
     }
   }
 
@@ -28,15 +28,22 @@ class PlacePicker extends Component {
       axios.get(`https://maps.googleapis.com/maps/api/directions/json?origin=${this.props.userPosition.latitude},${this.props.userPosition.longitude}&destination=${destinationPosition.lat},${destinationPosition.lng}&mode=walking&key=AIzaSyD8Y2CrGc4ZHnd6NdKlSEOruZQDw9e888c`)
         .then(data => {
           const distance = data.data.routes[0].legs[0].distance.text
-          console.log('walking Distance', distance)
+          // console.log('walking Distance', distance)
           this.setState({ distance })
         })
+    }
+
+    const convertDistance = () => {
+      console.log(this.state.distance)
+      console.log(this.props.stride)
+      console.log(63360 / (parseInt(this.state.distance, 10) * this.props.stride))
+      return (63360 / (parseInt(this.state.distance, 10) * this.props.stride))
     }
 
     const renderDistance = () => {
       if (this.state.distance !== undefined) {
         return (
-          <Text>Your destination is {this.state.distance} away.</Text>
+          <Text>Your destination is {convertDistance()} steps away.</Text>
         )
       }
     }
