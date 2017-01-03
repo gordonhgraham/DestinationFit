@@ -3,7 +3,6 @@ import { View } from 'react-native'
 import WelcomeBar from './WelcomeBar'
 import Avatar from './Avatar'
 import DestinationsList from './DestinationsList'
-import { Button } from './common'
 
 class Home extends Component {
   state = {

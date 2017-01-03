@@ -39,12 +39,7 @@ const Avatar = (props) => {
         style={imageStyle}
         source={{ uri: props.avatar_uri }}
       />
-      <View>
-        <View>{renderStepsOrStride()}</View>
-        {/* <View style={buttonContainerStyle}>
-          <Button>Resync With Fitbit</Button>
-        </View> */}
-      </View>
+      <View>{renderStepsOrStride()}</View>
     </View>
   )
 }
