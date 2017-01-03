@@ -10,6 +10,7 @@ class PlacePicker extends Component {
     super(props)
     this.state = {
       destinationPosition: undefined,
+      distance: undefined
     }
   }
 
@@ -18,15 +19,27 @@ class PlacePicker extends Component {
       axios.get(`https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&key=AIzaSyCO5hdyDQWgv8H3LyqVsA1Od14hstUWJ-c`)
         .then(data => {
           const destinationPosition = data.data.result.geometry.location
+          this.setState({ destinationPosition })
           getDistance(destinationPosition)
         })
     }
 
     const getDistance = (destinationPosition) => {
-      axios.get(`https://maps.googleapis.com/maps/api/directions/json?origin=${this.props.userPosition.latitude},${this.props.userPosition.longitude}&destination=${destinationPosition.lat},${destinationPosition.lng}&key=AIzaSyD8Y2CrGc4ZHnd6NdKlSEOruZQDw9e888c`)
-        .then(data => console.log('response form getDistance', data))
+      axios.get(`https://maps.googleapis.com/maps/api/directions/json?origin=${this.props.userPosition.latitude},${this.props.userPosition.longitude}&destination=${destinationPosition.lat},${destinationPosition.lng}&mode=walking&key=AIzaSyD8Y2CrGc4ZHnd6NdKlSEOruZQDw9e888c`)
+        .then(data => {
+          const distance = data.data.routes[0].legs[0].distance.text
+          console.log('walking Distance', distance)
+          this.setState({ distance })
+        })
     }
 
+    const renderDistance = () => {
+      if (this.state.distance !== undefined) {
+        return (
+          <Text>Your destination is {this.state.distance} away.</Text>
+        )
+      }
+    }
 
     const renderMap = () => {
       if (this.state.destinationPosition !== undefined) {
@@ -73,6 +86,7 @@ class PlacePicker extends Component {
           }}
           filterReverseGeocodingByTypes={['locality', 'administrative_area_level_3']}
         />
+        {renderDistance()}
         {renderMap()}
       </View>
     )

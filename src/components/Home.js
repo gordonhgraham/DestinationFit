@@ -19,6 +19,7 @@ export default class Home extends Component {
     navigator.geolocation.getCurrentPosition(position => {
         const userInitialPosition = position.coords
         this.setState({ userInitialPosition })
+        console.log('user initial position', this.state.userInitialPosition)
       },
       error => console.error(error),
       { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
@@ -26,6 +27,7 @@ export default class Home extends Component {
     this.watchID = navigator.geolocation.watchPosition(position => {
       const userLastPosition = position.coords
       this.setState({ userLastPosition })
+      console.log('user last position', this.state.userLastPosition)
     })
   }
 
