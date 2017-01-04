@@ -3,61 +3,73 @@ import { View, Text, Image } from 'react-native'
 import { Actions } from 'react-native-router-flux'
 import { Button } from './common'
 
+const icon = require('../walking1.png')
+
 const LandingPage = () => {
   const {
+    headerStyle,
     imageStyle,
     textStyle,
+    actionTextStyle,
     containerStyle,
     buttonContainerStyle
   } = styles
 
+
   return (
     <View style={containerStyle}>
+      <Text style={headerStyle}>DestinationFit</Text>
       <Image
+        source={icon}
         style={imageStyle}
-        source={{ uri: 'https://irp-cdn.multiscreensite.com/43ef94bc/dms3rep/multi/desktop/visit-us-icon-200x200.png' }}
       />
       <Text style={textStyle}>
         DestinationFit helps you reach your step goal by providing you with
-        destinations near you and their step distance away.
-        Just find a spot and go on a walk!
-        </Text>
-        <Text>*********To calculate distance we will need
-        your stride length. Either login with FitBit or continue to measure
-        your stride length.
+        destinations near you{'\n'}and their step distance away.
+        {'\n'}Just pick a spot and go on a walk!
+      </Text>
+      <Text style={actionTextStyle}>
+        To determine step distance we will need calculate your stride length.
       </Text>
       <View style={buttonContainerStyle}>
-        <Button>Log In With FitBit</Button>
+        <Button onPress={Actions.EstimateStride}>Continue</Button>
       </View>
-      <Text style={textStyle}>Or</Text>
-      <Text onPress={Actions.EstimateStride} style={textStyle}>
-        Continue to estimate stride length
-      </Text>
     </View>
   )
 }
 
 const styles = {
   headerStyle: {
-    fontSize: 50,
-    alignSelf: 'center'
+    fontSize: 45,
+    alignSelf: 'center',
+    color: '#f6f6f6',
+    fontFamily: 'Thonburi',
   },
   imageStyle: {
     alignSelf: 'center',
     height: 130,
     width: 130,
     marginTop: 35,
-    marginBottom: 30
+    marginBottom: 30,
   },
   textStyle: {
-    alignSelf: 'center',
-    justifyContent: 'center'
+    textAlign: 'center',
+    color: '#f6f6f6',
+    // justifyContent: 'center'
+    fontFamily: 'Thonburi',
+  },
+  actionTextStyle: {
+    textAlign: 'center',
+    color: '#d2d4d5',
+    paddingTop: 18,
+    fontFamily: 'Thonburi',
   },
   containerStyle: {
-    marginTop: 65,
-    paddingTop: 15,
+    backgroundColor: '#405a93',
+    paddingTop: 80,
     paddingRight: 10,
-    paddingLeft: 10
+    paddingLeft: 10,
+    flex: 1
   },
   buttonContainerStyle: {
     paddingTop: 15,

@@ -22,16 +22,29 @@ const Avatar = (props) => {
         </View>
       )
     }
+  // const renderStepsOrStride = () => {
+  //   if (!isNaN(props.stride)) {
+  //     return (
+  //       <View>
+  //         <Text style={textStyle}>Your stride length is {Math.round(props.stride * 12)} inches.</Text>
+  //         <View style={buttonContainerStyle}>
+  //           <Button onPress={Actions.EstimateStride}>Recalculate</Button>
+  //         </View>
+  //       </View>
+  //     )
+  //   }
+  //
+  //   return (
+  //     <View>
+  //       <Text style={textStyle}>Only {props.steps} steps to surpass your goal!</Text>
+  //       <View style={buttonContainerStyle}>
+  //         <Button>Resync With Fitbit</Button>
+  //       </View>
+  //     </View>
+  //   )
+  // }
 
-    return (
-      <View>
-        <Text style={textStyle}>Only {props.steps} steps to surpass your goal!</Text>
-        <View style={buttonContainerStyle}>
-          <Button>Resync With Fitbit</Button>
-        </View>
-      </View>
-    )
-  }
+  // with fitbit integration call renderStepsOrStride function inside nested view below
 
   return (
     <View style={containerStyle}>
@@ -39,7 +52,12 @@ const Avatar = (props) => {
         style={imageStyle}
         source={{ uri: props.avatar_uri }}
       />
-      <View>{renderStepsOrStride()}</View>
+      <View>
+        <Text style={textStyle}>Your stride length is {Math.round(props.stride * 12)} inches.</Text>
+        <View style={buttonContainerStyle}>
+          <Button onPress={Actions.EstimateStride}>Recalculate</Button>
+        </View>
+      </View>
     </View>
   )
 }
@@ -53,6 +71,8 @@ const styles = {
   },
   textStyle: {
     fontSize: 14,
+    color: '#f6f6f6',
+    fontFamily: 'Thonburi',
     // flex: 3,
     // alignSelf: 'stretch'
   },
@@ -66,8 +86,9 @@ const styles = {
   buttonContainerStyle: {
     marginTop: 5,
     alignSelf: 'center',
-    height: 30,
+    height: 35,
     width: 140
   }
 }
+
 export default Avatar

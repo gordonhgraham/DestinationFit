@@ -37,7 +37,7 @@ class PlacePicker extends Component {
     const renderDistance = () => {
       if (this.state.distance !== undefined) {
         return (
-          <Text>Your destination is {convertDistance()} steps away.</Text>
+          <Text style={{ paddingTop: 10, color: "#f6f6f6" }}>Your destination is {convertDistance()} steps away.</Text>
         )
       }
     }
@@ -55,10 +55,12 @@ class PlacePicker extends Component {
 
     return (
       <View>
+        {renderDistance()}
         <GooglePlacesAutocomplete
           placeholder="Search"
           minLength={2}
           autoFocus={false}
+          listViewDisplayed='auto'
           fetchDetails
           onPress={(details) => {
             const placeId = details.place_id
@@ -71,12 +73,11 @@ class PlacePicker extends Component {
           }}
           styles={{
             textInputContainer: {
-              backgroundColor: 'rgba(0,0,0,0)'
+              backgroundColor: '#88a9cc',
             },
             listView: {
               marginTop: 45,
-              height: 300,
-              width: 300,
+              flex: 1,
               position: 'absolute',
             }
           }}
@@ -87,8 +88,9 @@ class PlacePicker extends Component {
           }}
           filterReverseGeocodingByTypes={['locality', 'administrative_area_level_3']}
         />
-        {renderDistance()}
-        {renderMap()}
+        <View>
+          {renderMap()}
+        </View>
       </View>
     )
   }

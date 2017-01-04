@@ -15,7 +15,7 @@ class App extends Component {
           <Scene
             key="LandingPage"
             component={LandingPage}
-            title="DestinationFit"
+            title=""
             initial={true}
           />
           <Scene

@@ -36,8 +36,7 @@ export default class Home extends Component {
 
   render() {
     return (
-      <View style={{ marginTop: 80 }}>
-        <WelcomeBar name={this.state.name} />
+      <View style={{ paddingTop: 80, flex: 1, backgroundColor: '#405a93' }}>
         <Avatar
           avatar_uri={this.state.avatar_uri}
           steps={this.state.steps}
