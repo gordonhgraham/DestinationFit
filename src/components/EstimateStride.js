@@ -12,7 +12,7 @@ class EstimateStride extends Component {
     }
 
     return (
-      <View style={{ marginTop: 80 }}>
+      <View style={{ paddingTop: 80, flex: 1, backgroundColor: '#405a93' }}>
         <Text>To estimate stide length you will need a tape measure
           or a known distance. Count your steps as you walk the across the
           distance, making sure you take at least 20 steps. Enter
