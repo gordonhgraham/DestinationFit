@@ -11,17 +11,6 @@ const Avatar = (props) => {
     buttonContainerStyle
   } = styles
 
-  const renderStepsOrStride = () => {
-    if (!isNaN(props.stride)) {
-      return (
-        <View>
-          <Text style={textStyle}>Your stride length is {Math.round(props.stride * 12)} inches.</Text>
-          <View style={buttonContainerStyle}>
-            <Button onPress={Actions.EstimateStride}>Recalculate Stride</Button>
-          </View>
-        </View>
-      )
-    }
   // const renderStepsOrStride = () => {
   //   if (!isNaN(props.stride)) {
   //     return (
