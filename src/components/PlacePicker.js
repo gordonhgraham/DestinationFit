@@ -27,17 +27,18 @@ class PlacePicker extends Component {
     const getDistance = (destinationPosition) => {
       axios.get(`https://maps.googleapis.com/maps/api/directions/json?origin=${this.props.userPosition.latitude},${this.props.userPosition.longitude}&destination=${destinationPosition.lat},${destinationPosition.lng}&mode=walking&key=AIzaSyD8Y2CrGc4ZHnd6NdKlSEOruZQDw9e888c`)
         .then(data => {
+          console.log(data)
           const distance = data.data.routes[0].legs[0].distance.text
-          // console.log('walking Distance', distance)
           this.setState({ distance })
         })
     }
 
     const convertDistance = () => {
-      console.log(this.state.distance)
-      console.log(this.props.stride)
-      console.log(63360 / (parseInt(this.state.distance, 10) * this.props.stride))
-      return (63360 / (parseInt(this.state.distance, 10) * this.props.stride))
+      // console.log(this.state.distance)
+      // console.log(parseFloat(this.state.distance))
+      // console.log(this.props.stride)
+      // console.log((5280 * parseFloat(this.state.distance)) / this.props.stride)
+      return Math.round((5280 * parseFloat(this.state.distance)) / this.props.stride)
     }
 
     const renderDistance = () => {
