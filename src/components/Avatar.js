@@ -17,7 +17,7 @@ const Avatar = (props) => {
         <View>
           <Text style={textStyle}>Your stride length is {props.stride * 12} inches.</Text>
           <View style={buttonContainerStyle}>
-            <Button onPress={Actions.EstimateStride}>Recalculate Stride</Button>
+            <Button onPress={Actions.EstimateStride}>Recalculate</Button>
           </View>
         </View>
       )
@@ -53,6 +53,7 @@ const styles = {
   },
   textStyle: {
     fontSize: 14,
+    color: '#f6f6f6'
     // flex: 3,
     // alignSelf: 'stretch'
   },

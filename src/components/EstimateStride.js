@@ -13,10 +13,11 @@ class EstimateStride extends Component {
 
     return (
       <View style={{ paddingTop: 80, flex: 1, backgroundColor: '#405a93' }}>
-        <Text>To estimate stide length you will need a tape measure
+        <Text style={styles.textStyle}>To estimate stide length you will need a tape measure
           or a known distance. Count your steps as you walk the across the
-          distance, making sure you take at least 20 steps. Enter
-          total steps and distance in feet below.</Text>
+          distance, making sure you take at least 20 steps.
+        </Text>
+        <Text style={styles.actionTextStyle}>Enter total steps and distance in feet.</Text>
           <Card>
             <CardSection>
               <InputField
@@ -45,6 +46,19 @@ class EstimateStride extends Component {
       </View>
     )
   }
+}
+
+const styles={
+  textStyle: {
+    color: '#f6f6f6',
+    padding: 3,
+    textAlign: 'center'
+  },
+  actionTextStyle: {
+    textAlign: 'center',
+    color: '#d2d4d5',
+    paddingTop: 18,
+  },
 }
 
 export default EstimateStride

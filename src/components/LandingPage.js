@@ -57,9 +57,9 @@ const styles = {
     // justifyContent: 'center'
   },
   actionTextStyle: {
-    textAlign: 'justify',
-    color: '#f6f6f6',
-
+    textAlign: 'center',
+    color: '#d2d4d5',
+    paddingTop: 18,
   },
   containerStyle: {
     backgroundColor: '#405a93',

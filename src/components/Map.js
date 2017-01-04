@@ -24,8 +24,9 @@ const styles = {
   mapStyle: {
     marginTop: 100,
     height: 300,
-    width: 300
-  }
+    width: 420
+  },
 }
+
 
 export default Map
