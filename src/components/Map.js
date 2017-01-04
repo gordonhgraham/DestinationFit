@@ -1,30 +1,45 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import React, { Component } from 'react'
+import { View } from 'react-native'
 import MapView from 'react-native-maps'
 
-const Map = (props) => {
-  return (
-    <View>
-      <MapView
-        style={styles.mapStyle}
-        initialRegion={{
-          latitude: props.destinationLat,
-          longitude: props.destinationLon,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
-        }}
-      />
-      <Text>Initial latitude: {props.initialLat}</Text>
-      <Text>Initial longitude: {props.initialLon}</Text>
-    </View>
-  )
+class Map extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      destinationLatLon: {
+        latitude: this.props.destinationLat,
+        longitude: this.props.destinationLon
+      }
+    }
+  }
+
+  render() {
+    return (
+      <View>
+        <MapView
+          style={styles.mapStyle}
+          initialRegion={{
+            latitude: this.state.destinationLatLon.latitude,
+            longitude: this.state.destinationLatLon.longitude,
+            latitudeDelta: 0.0222,
+            longitudeDelta: 0.0222,
+          }}
+        >
+          <MapView.Marker
+            coordinate={this.state.destinationLatLon}
+          />
+        </MapView>
+      </View>
+    )
+  }
 }
 
 const styles = {
   mapStyle: {
     marginTop: 100,
     height: 300,
-    width: 420
+    // width: 420
+    flexGrow: 1
   },
 }
 

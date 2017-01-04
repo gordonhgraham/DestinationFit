@@ -11,27 +11,29 @@ const Avatar = (props) => {
     buttonContainerStyle
   } = styles
 
-  const renderStepsOrStride = () => {
-    if (!isNaN(props.stride)) {
-      return (
-        <View>
-          <Text style={textStyle}>Your stride length is {props.stride * 12} inches.</Text>
-          <View style={buttonContainerStyle}>
-            <Button onPress={Actions.EstimateStride}>Recalculate</Button>
-          </View>
-        </View>
-      )
-    }
+  // const renderStepsOrStride = () => {
+  //   if (!isNaN(props.stride)) {
+  //     return (
+  //       <View>
+  //         <Text style={textStyle}>Your stride length is {Math.round(props.stride * 12)} inches.</Text>
+  //         <View style={buttonContainerStyle}>
+  //           <Button onPress={Actions.EstimateStride}>Recalculate</Button>
+  //         </View>
+  //       </View>
+  //     )
+  //   }
+  //
+  //   return (
+  //     <View>
+  //       <Text style={textStyle}>Only {props.steps} steps to surpass your goal!</Text>
+  //       <View style={buttonContainerStyle}>
+  //         <Button>Resync With Fitbit</Button>
+  //       </View>
+  //     </View>
+  //   )
+  // }
 
-    return (
-      <View>
-        <Text style={textStyle}>Only {props.steps} steps to surpass your goal!</Text>
-        <View style={buttonContainerStyle}>
-          <Button>Resync With Fitbit</Button>
-        </View>
-      </View>
-    )
-  }
+  // with fitbit integration call renderStepsOrStride function inside nested view below
 
   return (
     <View style={containerStyle}>
@@ -39,7 +41,12 @@ const Avatar = (props) => {
         style={imageStyle}
         source={{ uri: props.avatar_uri }}
       />
-      <View>{renderStepsOrStride()}</View>
+      <View>
+        <Text style={textStyle}>Your stride length is {Math.round(props.stride * 12)} inches.</Text>
+        <View style={buttonContainerStyle}>
+          <Button onPress={Actions.EstimateStride}>Recalculate</Button>
+        </View>
+      </View>
     </View>
   )
 }

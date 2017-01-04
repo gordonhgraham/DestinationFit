@@ -72,12 +72,11 @@ class PlacePicker extends Component {
           }}
           styles={{
             textInputContainer: {
-              backgroundColor: '#88a9cc'
+              backgroundColor: '#88a9cc',
             },
             listView: {
               marginTop: 45,
-              height: 300,
-              width: 300,
+              flex: 1,
               position: 'absolute',
             }
           }}
