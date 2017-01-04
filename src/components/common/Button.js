@@ -19,7 +19,8 @@ const styles = {
     fontSize: 14,
     fontWeight: '600',
     paddingTop: 6,
-    paddingBottom: 6
+    paddingBottom: 6,
+    fontFamily: 'Thonburi-Bold',
   },
   buttonStyle: {
     flex: 1,

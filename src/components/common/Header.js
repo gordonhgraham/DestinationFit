@@ -14,6 +14,7 @@ const Header = (props) => {
 const styles = {
   textStyle: {
     fontSize: 20,
+    fontFamily: 'Thonburi',
   },
   viewStyle: {
     backgroundColor: '#f8f8f8',

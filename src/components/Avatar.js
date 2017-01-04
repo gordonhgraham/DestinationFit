@@ -60,7 +60,8 @@ const styles = {
   },
   textStyle: {
     fontSize: 14,
-    color: '#f6f6f6'
+    color: '#f6f6f6',
+    fontFamily: 'Thonburi',
     // flex: 3,
     // alignSelf: 'stretch'
   },
@@ -74,7 +75,7 @@ const styles = {
   buttonContainerStyle: {
     marginTop: 5,
     alignSelf: 'center',
-    height: 30,
+    height: 35,
     width: 140
   }
 }

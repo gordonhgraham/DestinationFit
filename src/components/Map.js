@@ -21,8 +21,8 @@ class Map extends Component {
           initialRegion={{
             latitude: this.state.destinationLatLon.latitude,
             longitude: this.state.destinationLatLon.longitude,
-            latitudeDelta: 0.0222,
-            longitudeDelta: 0.0222,
+            latitudeDelta: 0.01,
+            longitudeDelta: 0.01,
           }}
         >
           <MapView.Marker

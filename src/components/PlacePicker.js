@@ -60,6 +60,7 @@ class PlacePicker extends Component {
           placeholder="Search"
           minLength={2}
           autoFocus={false}
+          listViewDisplayed='auto'
           fetchDetails
           onPress={(details) => {
             const placeId = details.place_id
@@ -87,8 +88,9 @@ class PlacePicker extends Component {
           }}
           filterReverseGeocodingByTypes={['locality', 'administrative_area_level_3']}
         />
-
-        {renderMap()}
+        <View>
+          {renderMap()}
+        </View>
       </View>
     )
   }

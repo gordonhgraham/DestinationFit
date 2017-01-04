@@ -52,12 +52,14 @@ const styles={
   textStyle: {
     color: '#f6f6f6',
     padding: 3,
-    textAlign: 'center'
+    textAlign: 'center',
+    fontFamily: 'Thonburi',
   },
   actionTextStyle: {
     textAlign: 'center',
     color: '#d2d4d5',
     paddingTop: 18,
+    fontFamily: 'Thonburi',
   },
 }
 

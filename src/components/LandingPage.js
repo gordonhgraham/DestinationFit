@@ -25,8 +25,8 @@ const LandingPage = () => {
       />
       <Text style={textStyle}>
         DestinationFit helps you reach your step goal by providing you with
-        destinations near you and their step distance away.
-        Just pick a spot and go on a walk!
+        destinations near you{'\n'}and their step distance away.
+        {'\n'}Just pick a spot and go on a walk!
       </Text>
       <Text style={actionTextStyle}>
         To determine step distance we will need calculate your stride length.
@@ -43,6 +43,7 @@ const styles = {
     fontSize: 45,
     alignSelf: 'center',
     color: '#f6f6f6',
+    fontFamily: 'Thonburi',
   },
   imageStyle: {
     alignSelf: 'center',
@@ -55,11 +56,13 @@ const styles = {
     textAlign: 'center',
     color: '#f6f6f6',
     // justifyContent: 'center'
+    fontFamily: 'Thonburi',
   },
   actionTextStyle: {
     textAlign: 'center',
     color: '#d2d4d5',
     paddingTop: 18,
+    fontFamily: 'Thonburi',
   },
   containerStyle: {
     backgroundColor: '#405a93',
