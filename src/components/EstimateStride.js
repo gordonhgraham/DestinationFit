@@ -8,7 +8,6 @@ class EstimateStride extends Component {
   render() {
     const calculateStride = () => {
       const stride = this.state.distance / this.state.steps
-      console.log(stride)
       Actions.Home({ stride })
     }
 
@@ -47,9 +46,5 @@ class EstimateStride extends Component {
     )
   }
 }
-
-// const styles = {
-//
-// }
 
 export default EstimateStride

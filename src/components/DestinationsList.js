@@ -17,9 +17,6 @@ const LocationsList = () => {
         <CardSection>
           <Text>Kristina Reese Yoga</Text>
         </CardSection>
-        <CardSection>
-          <Text>Marshall's Colonic Depot</Text>
-        </CardSection>
       </Card>
     </View>
   )

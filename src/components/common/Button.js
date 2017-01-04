@@ -1,8 +1,6 @@
 import React from 'react'
 import { Text, TouchableOpacity } from 'react-native'
 
-// lecture 50 has info about linking used in AlbumDetail
-
 const Button = ({ onPress, children }) => {
   const { buttonStyle, textStyle } = styles
   return (

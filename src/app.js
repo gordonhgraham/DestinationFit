@@ -1,14 +1,7 @@
-// import library to help create Component
 import React, { Component } from 'react'
 import { Router, Scene } from 'react-native-router-flux'
-
-// import { View } from 'react-native'
 import LandingPage from './components/LandingPage'
-// import WelcomeBar from './components/WelcomeBar'
-// import Avatar from './components/Avatar'
-// import DestinationsList from './components/DestinationsList'
 import EstimateStride from './components/EstimateStride'
-// import { Header } from './components/common'
 import Home from './components/Home'
 
 class App extends Component {
@@ -42,10 +35,3 @@ class App extends Component {
 }
 
 export default App
-
-{/* <Header headerText={'DestinationFit'} />
-<WelcomeBar name={this.state.name} />
-<Avatar avatar_uri={this.state.avatar_uri} steps={this.state.steps} />
-<DestinationsList />
-<LandingPage />
-<EstimateStride /> */}

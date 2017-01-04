@@ -5,7 +5,6 @@ import { Button } from './common'
 
 const LandingPage = () => {
   const {
-    headerStyle,
     imageStyle,
     textStyle,
     containerStyle,
@@ -14,7 +13,6 @@ const LandingPage = () => {
 
   return (
     <View style={containerStyle}>
-      {/* <Text style={headerStyle}>DestinationFit</Text> */}
       <Image
         style={imageStyle}
         source={{ uri: 'https://irp-cdn.multiscreensite.com/43ef94bc/dms3rep/multi/desktop/visit-us-icon-200x200.png' }}
