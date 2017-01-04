@@ -53,6 +53,7 @@ class Map extends Component {
           <MapView.Marker
             coordinate={this.state.destinationLatLon}
             title={this.props.destinationName}
+            pinColor={'#ff8447'}
           />
         </MapView>
       </View>

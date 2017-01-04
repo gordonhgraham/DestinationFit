@@ -10,7 +10,10 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
+      <Router
+        navigationBarStyle={{ backgroundColor: '#88a9cc' }}
+        barButtonIconStyle={{ tintColor: '#405a93' }}
+      >
         <Scene key="root">
           <Scene
             key="LandingPage"
