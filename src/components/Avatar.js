@@ -3,8 +3,6 @@ import { View, Image, Text } from 'react-native'
 import { Actions } from 'react-native-router-flux'
 import { Button } from './common'
 
-const icon = require('../walking1.png')
-
 const Avatar = (props) => {
   const {
     imageStyle,
@@ -41,10 +39,10 @@ const Avatar = (props) => {
     <View style={containerStyle}>
       <Image
         style={imageStyle}
-        source={icon}
+        source={props.avatar_uri}
       />
       <View>
-        <Text style={textStyle}>Your stride length is {Math.round(props.stride * 12)} inches.</Text>
+        <Text style={textStyle}>Your stride length is {Math.round(props.stride * 0.393701)} inches.</Text>
         <View style={buttonContainerStyle}>
           <Button onPress={Actions.EstimateStride}>Recalculate</Button>
         </View>

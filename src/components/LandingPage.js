@@ -2,6 +2,7 @@ import React from 'react'
 import { View, Text, Image } from 'react-native'
 import { Actions } from 'react-native-router-flux'
 import { Button } from './common'
+import FitBitLogin from './FitBitLogin'
 
 const icon = require('../walking1.png')
 
@@ -33,6 +34,9 @@ const LandingPage = () => {
       </Text>
       <View style={buttonContainerStyle}>
         <Button onPress={Actions.EstimateStride}>Continue</Button>
+      </View>
+      <View style={buttonContainerStyle}>
+        <Button onPress={FitBitLogin}>Fitbit</Button>
       </View>
     </View>
   )

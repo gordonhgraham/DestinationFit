@@ -35,12 +35,14 @@ export default class Home extends Component {
 
 
   render() {
+    console.log(this.props.profile.picture)
+    console.log(this.props.profile.extraInfo.strideLengthWalking)
     return (
       <View style={{ paddingTop: 80, flex: 1, backgroundColor: '#405a93' }}>
         <Avatar
-          avatar_uri={this.state.avatar_uri}
-          steps={this.state.steps}
-          stride={this.props.stride}
+          avatar_uri={{ uri: this.props.profile.picture }}
+          // steps={this.state.steps}
+          stride={this.props.profile.extraInfo.strideLengthWalking}
         />
         <PlacePicker
           userPosition={this.state.userLastPosition}
