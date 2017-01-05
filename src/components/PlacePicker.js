@@ -46,7 +46,14 @@ class PlacePicker extends Component {
     const renderDistance = () => {
       if (this.state.distance !== undefined) {
         return (
-          <Text style={{ paddingTop: 10, color: "#f6f6f6" }}>Your destination is {convertDistance()} steps away.</Text>
+          <Text
+            style={{
+              paddingTop: 10,
+              color: '#f6f6f6',
+              fontSize: 20,
+              textAlign: 'center'
+            }}
+          >Your destination is{'\n'}{convertDistance()}{'\n'}steps away.</Text>
         )
       }
     }
