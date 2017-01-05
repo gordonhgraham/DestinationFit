@@ -4,11 +4,13 @@ import WelcomeBar from './WelcomeBar'
 import Avatar from './Avatar'
 import PlacePicker from './PlacePicker'
 
+const icon = require('../walking1.png')
+
+
 export default class Home extends Component {
   state = {
-    name: 'James',
-    avatar_uri: 'https://i.stack.imgur.com/WmvM0.png',
-    steps: 8675,
+    userPhoto: this.props.profile ? { uri: this.props.profile.picture } : icon,
+    userStride: this.props.profile ? (this.props.profile.extraInfo.strideLengthWalking * 0.393701) : (this.props.stride * 12),
     userInitialPosition: 'unknown',
     userLastPosition: 'unknown',
   }
@@ -35,14 +37,12 @@ export default class Home extends Component {
 
 
   render() {
-    console.log(this.props.profile.picture)
-    console.log(this.props.profile.extraInfo.strideLengthWalking)
     return (
       <View style={{ paddingTop: 80, flex: 1, backgroundColor: '#405a93' }}>
         <Avatar
-          avatar_uri={{ uri: this.props.profile.picture }}
+          avatar_uri={this.state.userPhoto}
           // steps={this.state.steps}
-          stride={this.props.profile.extraInfo.strideLengthWalking}
+          stride={this.state.userStride}
         />
         <PlacePicker
           userPosition={this.state.userLastPosition}
