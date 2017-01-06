@@ -7,8 +7,8 @@ class EstimateStride extends Component {
   state = { steps: undefined, distance: undefined }
   render() {
     const calculateStride = () => {
-      const stride = this.state.distance / this.state.steps
-      Actions.Home({ stride })
+      const userStride = this.state.distance / this.state.steps
+      Actions.Home({ userStride })
     }
 
     return (

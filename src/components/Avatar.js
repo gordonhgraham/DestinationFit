@@ -42,7 +42,7 @@ const Avatar = (props) => {
         source={props.avatar_uri}
       />
       <View>
-        <Text style={textStyle}>Your stride length is {Math.round(props.stride)} inches.</Text>
+        <Text style={textStyle}>Your stride length is {Math.round(props.userStride)} inches.</Text>
         <View style={buttonContainerStyle}>
           <Button onPress={Actions.EstimateStride}>Recalculate</Button>
         </View>

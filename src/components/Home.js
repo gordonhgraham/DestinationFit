@@ -20,7 +20,7 @@ export default class Home extends Component {
     userStride:
       this.props.profile ?
       (this.props.profile.extraInfo.strideLengthWalking * 0.393701) :
-      (this.props.stride * 12),
+      (this.props.userStride * 12),
     isGuest:
       this.props.profile ?
       'false' :
@@ -51,6 +51,7 @@ export default class Home extends Component {
 
 
   render() {
+    console.log('userStride from home.js', this.state.userStride)
     return (
       <View style={{ paddingTop: 30, flex: 1, backgroundColor: '#405a93' }}>
         <WelcomeBar
@@ -60,11 +61,11 @@ export default class Home extends Component {
         <Avatar
           avatar_uri={this.state.userPhoto}
           // steps={this.state.steps}
-          stride={this.state.userStride}
+          userStride={this.state.userStride}
         />
         <PlacePicker
           userPosition={this.state.userLastPosition}
-          stride={this.props.stride}
+          userStride={this.state.userStride}
         />
       </View>
     )
