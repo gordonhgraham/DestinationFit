@@ -7,7 +7,6 @@ import PlacePicker from './PlacePicker'
 
 const icon = require('../walking1.png')
 
-
 export default class Home extends Component {
   state = {
     userToken: this.props.token,
@@ -45,6 +44,13 @@ export default class Home extends Component {
       const userLastPosition = position.coords
       this.setState({ userLastPosition })
     })
+
+    if (this.props.profile) {
+      axios.get(`http://localhost:3000/${this.props.profile.userId}`)
+        .then(data => {
+          console.log(data.data)
+        })
+    }
   }
 
   componentWillUnmount() {
@@ -53,6 +59,7 @@ export default class Home extends Component {
 
 
   render() {
+    console.log(this.props.profile.userId)
     return (
       <View style={{ paddingTop: 30, flex: 1, backgroundColor: '#405a93' }}>
         <WelcomeBar
