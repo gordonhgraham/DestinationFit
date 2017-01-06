@@ -19,14 +19,14 @@ class App extends Component {
             key="LandingPage"
             component={LandingPage}
             title=""
-            initial={true}
-            hideNavBar={true}
+            initial
+            hideNavBar
           />
           <Scene
             key="Home"
             component={Home}
             title="DestinationFit"
-            hideNavBar={false}
+            hideNavBar
           />
           <Scene
             key="EstimateStride"

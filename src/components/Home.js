@@ -9,8 +9,22 @@ const icon = require('../walking1.png')
 
 export default class Home extends Component {
   state = {
-    userPhoto: this.props.profile ? { uri: this.props.profile.picture } : icon,
-    userStride: this.props.profile ? (this.props.profile.extraInfo.strideLengthWalking * 0.393701) : (this.props.stride * 12),
+    userName:
+      this.props.profile ?
+      this.props.profile.name.substr(0, this.props.profile.name.indexOf(' ')) :
+      'Guest',
+    userPhoto:
+      this.props.profile ?
+      { uri: this.props.profile.picture } :
+      icon,
+    userStride:
+      this.props.profile ?
+      (this.props.profile.extraInfo.strideLengthWalking * 0.393701) :
+      (this.props.stride * 12),
+    isGuest:
+      this.props.profile ?
+      'false' :
+      'true',
     userInitialPosition: 'unknown',
     userLastPosition: 'unknown',
   }
@@ -38,7 +52,11 @@ export default class Home extends Component {
 
   render() {
     return (
-      <View style={{ paddingTop: 80, flex: 1, backgroundColor: '#405a93' }}>
+      <View style={{ paddingTop: 30, flex: 1, backgroundColor: '#405a93' }}>
+        <WelcomeBar
+          name={this.state.userName}
+          isGuest={this.state.isGuest}
+        />
         <Avatar
           avatar_uri={this.state.userPhoto}
           // steps={this.state.steps}
