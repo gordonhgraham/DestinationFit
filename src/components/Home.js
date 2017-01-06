@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React, { Component } from 'react'
 import { View } from 'react-native'
 import WelcomeBar from './WelcomeBar'
@@ -9,6 +10,7 @@ const icon = require('../walking1.png')
 
 export default class Home extends Component {
   state = {
+    userToken: this.props.token,
     userName:
       this.props.profile ?
       this.props.profile.name.substr(0, this.props.profile.name.indexOf(' ')) :
@@ -51,7 +53,6 @@ export default class Home extends Component {
 
 
   render() {
-    console.log('userStride from home.js', this.state.userStride)
     return (
       <View style={{ paddingTop: 30, flex: 1, backgroundColor: '#405a93' }}>
         <WelcomeBar

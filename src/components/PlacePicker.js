@@ -20,8 +20,6 @@ class PlacePicker extends Component {
   }
 
   render() {
-    console.log('this.props.userStride', this.props.userStride)
-    console.log('this.state.distance', this.state.distance)
     const getLatLng = (placeId) => {
       axios.get(`https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&key=AIzaSyCO5hdyDQWgv8H3LyqVsA1Od14hstUWJ-c`)
         .then(data => {
