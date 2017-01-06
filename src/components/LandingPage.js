@@ -25,18 +25,15 @@ const LandingPage = () => {
         style={imageStyle}
       />
       <Text style={textStyle}>
-        DestinationFit helps you reach your step goal by providing you with
-        destinations near you{'\n'}and their step distance away.
-        {'\n'}Just pick a spot and go on a walk!
-      </Text>
-      <Text style={actionTextStyle}>
-        To determine step distance we will need calculate your stride length.
+        DestinationFit helps you reach your step{'\n'}
+        goal by providing your step distance{'\n'}
+        from destinations near you.
       </Text>
       <View style={buttonContainerStyle}>
-        <Button onPress={Actions.EstimateStride}>Continue</Button>
+        <Button onPress={Actions.EstimateStride}>Calculate Stride Length</Button>
       </View>
       <View style={buttonContainerStyle}>
-        <Button onPress={FitBitLogin}>Fitbit</Button>
+        <Button onPress={FitBitLogin}>Login With Fitbit</Button>
       </View>
     </View>
   )
@@ -78,7 +75,7 @@ const styles = {
   buttonContainerStyle: {
     paddingTop: 15,
     height: 50,
-    width: 120,
+    width: 220,
     alignSelf: 'center',
     alignItems: 'center'
   },

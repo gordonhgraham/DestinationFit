@@ -59,7 +59,7 @@ const styles = {
     // flex: 1
   },
   textStyle: {
-    fontSize: 14,
+    fontSize: 18,
     color: '#f6f6f6',
     fontFamily: 'Thonburi',
     // flex: 3,

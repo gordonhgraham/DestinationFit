@@ -35,7 +35,7 @@ const WelcomeBar = (props) => {
 const styles = {
   textStyle: {
     fontSize: 25,
-    flex: 3,
+    flex: 2,
     textAlign: 'center',
     color: '#f6f6f6'
   },
