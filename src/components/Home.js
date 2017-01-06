@@ -46,7 +46,7 @@ export default class Home extends Component {
     })
 
     if (this.props.profile) {
-      axios.get(`http://localhost:3000/${this.props.profile.userId}`)
+      axios.get(`https://ghg-dfserver.herokuapp.com/${this.props.profile.userId}`)
         .then(data => {
           console.log(data.data)
         })
