@@ -38,13 +38,6 @@ class Map extends Component {
             longitudeDelta: 0.01,
           }}
         >
-          {/* {this.state.markers.map(marker => (
-              <MapView.Marker
-                coordinate={marker.latlng}
-                title={marker.title}
-                key={marker.title}
-              />
-            ))} */}
           <MapView.Marker
             coordinate={this.props.userLatLon}
             title={'Current Location'}
@@ -65,7 +58,6 @@ const styles = {
   mapStyle: {
     marginTop: 100,
     height: 300,
-    // width: 420
     flexGrow: 1
   },
 }

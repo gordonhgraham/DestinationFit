@@ -12,10 +12,6 @@ class PlacePicker extends Component {
       destinationName: undefined,
       distance: undefined,
       time: undefined,
-      // userLatLon: {
-      //   latitude: this.props.userPosition.latitude,
-      //   longitude: this.props.userPosition.longitude,
-      // }
     }
   }
 
@@ -39,7 +35,9 @@ class PlacePicker extends Component {
         })
     }
 
-    const convertDistance = () => Math.round((63360 * parseFloat(this.state.distance)) / this.props.userStride)
+    const convertDistance = () => {
+      Math.round((63360 * parseFloat(this.state.distance)) / this.props.userStride)
+    }
 
     const renderDistance = () => {
       if (this.state.distance !== undefined) {
@@ -102,10 +100,6 @@ class PlacePicker extends Component {
             }
           }}
           nearbyPlacesAPI={'GooglePlacesSearch'}
-          GoogleReverseGeocodingQuery={{
-          }}
-          GooglePlacesSearchQuery={{
-          }}
           filterReverseGeocodingByTypes={['locality', 'administrative_area_level_3']}
         />
         <View>

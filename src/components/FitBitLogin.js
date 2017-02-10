@@ -12,8 +12,7 @@ const FitBitLogin = () => {
         console.log(err)
         return
       }
-      // Authentication worked!
-      console.log('Logged in with Auth0!', token)
+      // authentication success
       Actions.Home({ profile, token })
     })
 }
