@@ -1,4 +1,3 @@
-import axios from 'axios'
 import React, { Component } from 'react'
 import { View } from 'react-native'
 import WelcomeBar from './WelcomeBar'
@@ -31,8 +30,6 @@ export default class Home extends Component {
     userLastPosition: 'unknown',
   }
 
-  watchID: ?number = null;
-
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(position => {
         const userInitialPosition = position.coords
@@ -51,6 +48,7 @@ export default class Home extends Component {
     navigator.geolocation.clearWatch(this.watchID)
   }
 
+  watchID: ?number = null;
 
   render() {
     return (

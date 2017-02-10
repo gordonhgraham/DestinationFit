@@ -11,7 +11,6 @@ const LandingPage = () => {
     headerStyle,
     imageStyle,
     textStyle,
-    actionTextStyle,
     containerStyle,
     buttonContainerStyle
   } = styles
@@ -56,7 +55,6 @@ const styles = {
   textStyle: {
     textAlign: 'center',
     color: '#f6f6f6',
-    // justifyContent: 'center'
     fontFamily: 'Thonburi',
   },
   actionTextStyle: {

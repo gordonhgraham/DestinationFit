@@ -5,9 +5,6 @@ import EstimateStride from './components/EstimateStride'
 import Home from './components/Home'
 
 class App extends Component {
-
-  // logic for if user is logged in render home, if stride length is not null, show home.
-
   render() {
     return (
       <Router
