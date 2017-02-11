@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { View, Text } from 'react-native'
+import { GOOGLE_API_KEY } from 'react-native-dotenv'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
 import axios from 'axios'
 import Map from './Map'
 
 class PlacePicker extends Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = {
       destinationPosition: undefined,
       destinationName: undefined,
@@ -17,7 +18,7 @@ class PlacePicker extends Component {
 
   render() {
     const getLatLng = (placeId) => {
-      axios.get(`https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&key=AIzaSyCO5hdyDQWgv8H3LyqVsA1Od14hstUWJ-c`)
+      axios.get(`https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&key=${GOOGLE_API_KEY}`)
         .then(data => {
           const destinationPosition = data.data.result.geometry.location
           const destinationName = data.data.result.name
@@ -28,7 +29,7 @@ class PlacePicker extends Component {
     }
 
     const getDistance = (destinationPosition) => {
-      axios.get(`https://maps.googleapis.com/maps/api/directions/json?origin=${this.props.userPosition.latitude},${this.props.userPosition.longitude}&destination=${destinationPosition.lat},${destinationPosition.lng}&mode=walking&key=AIzaSyD8Y2CrGc4ZHnd6NdKlSEOruZQDw9e888c`)
+      axios.get(`https://maps.googleapis.com/maps/api/directions/json?origin=${this.props.userPosition.latitude},${this.props.userPosition.longitude}&destination=${destinationPosition.lat},${destinationPosition.lng}&mode=walking&key=${GOOGLE_API_KEY}`)
         .then(data => {
           const distance = data.data.routes[0].legs[0].distance.text
           this.setState({ distance })
@@ -86,7 +87,7 @@ class PlacePicker extends Component {
             }
           }
           query={{
-            key: 'AIzaSyCO5hdyDQWgv8H3LyqVsA1Od14hstUWJ-c',
+            key: GOOGLE_API_KEY,
             language: 'en'
           }}
           styles={{
